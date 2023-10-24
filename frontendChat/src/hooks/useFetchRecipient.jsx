@@ -12,11 +12,8 @@ export const useFetchRecipientUser = (chat,user)=>{
     useEffect(()=>{
         const getUser = async () => {
             if(!recipientId) return null
-
             const response = await getRequest(`${baseUrl}/OnlyUser?id=${recipientId}`)
-
-            setRecipientUser(response);
-            console.log(response);
+            setRecipientUser(response);            
         };
 
         getUser();

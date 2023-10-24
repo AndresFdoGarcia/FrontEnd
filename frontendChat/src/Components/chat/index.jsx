@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipient";
 
 const UserChat = (chat,user) => {
-    const {recipientUser} = useFetchRecipientUser(chat,user)
-    console.log("a ver",recipientUser)
+    const {recipientUser} = useFetchRecipientUser(chat,user)    
     
     return(
         <>

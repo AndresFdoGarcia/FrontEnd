@@ -15,8 +15,7 @@ export const ChatContextProvider = ({children}) =>{
         return "null";
     })
 
-    const ActualizaLocalS = (data) =>{
-        console.log("punto I",JSON.parse(data));
+    const ActualizaLocalS = (data) =>{        
         setUserLogged(data);        
     }
 
@@ -28,8 +27,7 @@ export const ChatContextProvider = ({children}) =>{
     
     useEffect(()=>{
         const ruta = JSON.parse(localStorage.getItem('User'));
-        setUser(ruta);
-        console.log(ruta);
+        setUser(ruta);        
         if(ruta!== null){
             fetch(`http://localhost:3000/api/chats/${ruta.id.toString()}`)
             .then(response=> response.json())
@@ -37,21 +35,16 @@ export const ChatContextProvider = ({children}) =>{
         }                    
     },[userLogged]);
 
-    const updateCurrentChat = (chat)=>{
-        console.log("Desde base", chat)
+    const updateCurrentChat = (chat)=>{        
         setCurrentChat(chat)        
     }
     
     useEffect(()=>{
         const getMessages = async () => {
             if(!currentChat) return null
-            
-            console.log(currentChat);
-
             const response = await getRequest(`http://localhost:3000/api/messages/${currentChat._id}`)
-
             setMessages(response);
-            console.log(response);
+            
         };
 
         getMessages();

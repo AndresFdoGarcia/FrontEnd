@@ -24,8 +24,7 @@ export const AuthContextProvider = ({children}) => {
 
     useEffect(()=>{
         const user = localStorage.getItem("User");
-        setUser(JSON.parse(user));
-        console.log("Esta guardado",user)
+        setUser(JSON.parse(user));        
     },[loginInfo]);
 
     const[isRegisterLoading, setIsRegisterLogin] = useState(false);

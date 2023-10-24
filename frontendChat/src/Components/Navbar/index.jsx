@@ -10,17 +10,17 @@ const Navbar = () => {
         {
             to: '/',
             text: 'ChatIntcomex',
-            className: 'font-semibold text-lg',
+            className: 'font-semibold text-3xl',
             visible: true
-        },
+        }
+    ];
+    let menu2 =[        
         {
             to: '',
             text: `Login as ${user?.firstname ?? null}`,            
             className: '',
             visible: user ? true : false
-        }      
-    ];
-    let menu2 =[
+        },     
         {
             to: '/chat',
             text: 'Chat',
