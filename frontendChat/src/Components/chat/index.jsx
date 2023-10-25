@@ -7,9 +7,8 @@ const UserChat = (chat,user) => {
     return(
         <>
             <div className="flex flex-col gap-3 align-items-center p-2 justify-between">
-                <div className="flex flex-row">
-                    <div className="me-2">A</div>
-                    <div className="name">{recipientUser?.firstname}</div>                    
+                <div className="flex flex-row">                    
+                    <div className="text-sm">{recipientUser?.firstname}</div>                    
                 </div>
                 <div className="text">Text message</div>                
             </div>

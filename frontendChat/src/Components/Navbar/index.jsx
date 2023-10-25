@@ -4,7 +4,11 @@ import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
 
-    const {user,logOut} = useContext(AuthContext)
+    const {user,logOut,openProductDetail,closeProductDetail,isOpenProductDetail} = useContext(AuthContext)
+    
+    const showOptions = (event) =>{
+        openProductDetail()
+    }
     
     let menu1 = [
         {

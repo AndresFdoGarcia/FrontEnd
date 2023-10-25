@@ -11,7 +11,7 @@ const Boxmsg = () => {
 
     return(
         <>
-            <div className="flex flex-col h-full w-full  bg-white/60 rounded-lg text-black text-xs m-2">
+            <div className="flex flex-col h-full w-full  bg-white/80 rounded-lg text-black text-xs mr-2">
                 <header className="flex align-center justify-center p-3.5 text-white text-lg text-bold bg-[#1e1e1e]"> Chats                                
                 </header>
                 <ul className="space-y-4 mx-3 mt-3">

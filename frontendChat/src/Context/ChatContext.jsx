@@ -23,7 +23,14 @@ export const ChatContextProvider = ({children}) =>{
     const [isUserChatsLoading,setIsUserChatsLoading] = useState(false);
     const [userChatsError,setisUserChatsError] = useState(null);
     const [messages,setMessages] = useState(null);
-    const [currentChat,setCurrentChat] = useState(null);    
+    const [currentChat,setCurrentChat] = useState(null);
+    const [isOpenProductDetail, setIsOpen] = useState(false)
+
+
+//Product Detail . Open/Close
+    const openProductDetail = () => setIsOpen(true);
+    const closeProductDetail = () => setIsOpen(false);
+
     
     useEffect(()=>{
         const ruta = JSON.parse(localStorage.getItem('User'));
@@ -43,8 +50,7 @@ export const ChatContextProvider = ({children}) =>{
         const getMessages = async () => {
             if(!currentChat) return null
             const response = await getRequest(`http://localhost:3000/api/messages/${currentChat._id}`)
-            setMessages(response);
-            
+            setMessages(response);            
         };
 
         getMessages();
@@ -63,7 +69,10 @@ export const ChatContextProvider = ({children}) =>{
             user,
             messages,
             updateCurrentChat,
-            currentChat
+            currentChat,
+            openProductDetail,
+            closeProductDetail,
+            isOpenProductDetail
         }}>
             {children}
         </ChatContext.Provider>
