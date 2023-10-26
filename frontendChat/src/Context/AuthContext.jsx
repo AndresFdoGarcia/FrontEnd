@@ -47,8 +47,7 @@ export const AuthContextProvider = ({children}) => {
     }
 
     const registerUser = async(e)=>{
-        e.preventDefault()   
-        console.log("aqui estoy",registerInfo)
+        e.preventDefault()        
         
         setIsRegisterLogin(true);
         setRegisterError(null);
